@@ -9,41 +9,41 @@
                 "position": [24, 24], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "capt0001.jpg", 
+                "file": "capture1.jpg", 
                 "size": [552, 368]
             }, 
             {
                 "position": [24, 416], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "capt0002.jpg", 
+                "file": "capture2.jpg", 
                 "size": [552, 368]
             }, 
             {
                 "position": [24, 800], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "capt0003.jpg", 
+                "file": "capture3.jpg", 
                 "size": [552, 368]
             }, 
             {
                 "position": [24, 1180], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "capt0004.jpg", 
+                "file": "capture4.jpg", 
                 "size": [552, 368]
             }, 
             {
                 "position": [0, 0], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "2x6_frame.png", 
+                "file": "2x6_frame.jpg", 
                 "size": [600, 1800]
             }, 
             {
                 "font_size": 45, 
                 "angle": 0, 
-                "text": "www.snappycampers.co.uk", 
+                "text": "Sarah and Ryan's Wedding!", 
                 "text_color": [0, 0, 0], 
                 "position": [25, 1700], 
                 "font": "fonts/arial.ttf", 
@@ -55,28 +55,28 @@
                 "position": [624, 24], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "capt0001.jpg", 
+                "file": "capture1.jpg", 
                 "size": [552, 368]
             }, 
             {
                 "position": [624, 416], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "capt0002.jpg", 
+                "file": "capture2.jpg", 
                 "size": [552, 368]
             }, 
             {
                 "position": [624, 800], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "capt0003.jpg", 
+                "file": "capture3.jpg", 
                 "size": [552, 368]
             }, 
             {
                 "position": [624, 1180], 
                 "angle": 0, 
                 "type": "image", 
-                "file": "capt0004.jpg", 
+                "file": "capture4.jpg", 
                 "size": [552, 368]
             }, 
             {
@@ -89,7 +89,7 @@
             {
                 "font_size": 45, 
                 "angle": 0, 
-                "text": "www.snappycampers.co.uk", 
+                "text": "Sarah and Ryan's Wedding!", 
                 "text_color": [0, 0, 0], 
                 "position": [624, 1700], 
                 "font": "fonts/arial.ttf", 

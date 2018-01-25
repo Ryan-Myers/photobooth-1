@@ -25,10 +25,7 @@ from shutil import copy
 import re
 
 WIN32 = (os.name != 'posix')
-TMP_FOLDER = 'tmp'
-if not WIN32:
-	TMP_FOLDER = '/tmp'
-	os.chdir(os.path.dirname(sys.argv[0]))
+TMP_FOLDER = './tmp/'
 	
 SETTINGS = {}
 SCENES = []
@@ -85,12 +82,7 @@ def next_screen():
 	global current_screen
 	current_screen += 1
 
-def create_photo(photo_config):
-	if not WIN32:
-		filepattern = os.path.join(TMP_FOLDER, 'capt%04n.jpg')
-		camera.get_all_files(filepattern)
-		thread.start_new_thread(camera.delete_all_files, ())
-		
+def create_photo(photo_config):		
 	scale = 2
 	photo_format = tuple(map(lambda x: photo_config['dpi'] * x * scale,
 													photo_config['format']))
@@ -163,7 +155,7 @@ def create_photo(photo_config):
 			
 def capture_photo(number):
 	if not WIN32:
-		camera.trigger_capture()
+		camera.trigger_capture(number)
 
 def checkPassword(password):
 	global passKeyb

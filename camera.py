@@ -37,11 +37,8 @@ def get_model():
 	model = grep.stdout.read()[7:].strip()
 	return model
 
-def trigger_capture():
-	summary = subprocess.Popen(['gphoto2', '--trigger-capture'],
-								stdout=subprocess.PIPE,
-								stderr=subprocess.PIPE, shell=False)
-	err = summary.stderr.read()
+def trigger_capture(capturenumber):
+	summary = subprocess.Popen(['fswebcam -r 640x480 --device /dev/video0 --input 0 --no-banner -q tmp/capture' + str(capturenumber) +'.jpg'], shell=True)
 
 def get_all_files(filepattern):
 	##pattern example /tmp/capt%04n.jpg

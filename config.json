@@ -66,7 +66,7 @@
 		"hvaligment": [true, true],
 		"font_size": 20,
 		"color": [0, 0, 0],
-		"text": "Max & Jema Wedding!",
+		"text": "Sarah and Ryan Wedding!",
 		"font": "fonts/arial.ttf",
 		"name": "txtCaption"
 	}, {
@@ -87,7 +87,7 @@
 		"hvaligment": [true, false],
 		"font_size": 50,
 		"color": [0, 0, 0],
-		"text": "Welcome to Snappy Campers",
+		"text": "Ryan and Sarah's Wedding",
 		"position": [0, 100],
 		"font": "fonts/arial.ttf"
 	}, {
@@ -270,7 +270,7 @@
 		"hvaligment": [true, false],
 		"font_size": 55,
 		"color": [0, 0, 0],
-		"text": "www.snappycampers.co.uk",
+		"text": "Now get back to partying!",
 		"position": [100, 380],
 		"font": "fonts/arial.ttf"
 	}],
