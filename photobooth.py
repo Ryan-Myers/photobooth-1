@@ -19,6 +19,7 @@ from PIL import Image, ImageDraw, ImageFont
 import threading, thread
 import datetime
 import camera
+import printphoto
 import subprocess
 from pygame_vkeyboard import *
 from shutil import copy
@@ -59,7 +60,7 @@ def current_screen_is(name):
 		return False
 	return screens[current_screen].name == name
 
-def previos_screen_is(name):
+def previous_screen_is(name):
 	if current_screen >= len(screens) or\
 		current_screen - 1 < 0:
 		return False
@@ -144,6 +145,7 @@ def create_photo(photo_config):
 				(today.date().isoformat(), today.time().strftime('%H-%M-%S')))
 	image.save(filename)
 	global result_file_name
+	print 'created: ' + filename
 	result_file_name = filename
 	
 	if SETTINGS['preview_screen']:
@@ -154,8 +156,7 @@ def create_photo(photo_config):
 		return None
 			
 def capture_photo(number):
-	if not WIN32:
-		camera.trigger_capture(number)
+	camera.trigger_capture(number)
 
 def checkPassword(password):
 	global passKeyb
@@ -263,7 +264,7 @@ def main():
 						set_current_screen(delayScreen)
 						pygame.time.set_timer(pygame.USEREVENT + 1, 1000)
 						
-				if previos_screen_is('WorkInProgress') and COLLAGE == None:
+				if previous_screen_is('WorkInProgress') and COLLAGE == None:
 					pygame.time.set_timer(pygame.USEREVENT + 1, 0)
 					if thread_take_photo != None:
 						thread_take_photo.join()
@@ -309,8 +310,6 @@ def main():
 					
 			if event.type == widgets.Button.EVENT_BUTTONCLICK:
 				if event.name == 'btnStartClick':
-					if not WIN32:
-						camera.check_and_close_gvfs_gphoto()
 					set_current_screen(delayScreen)
 					pygame.time.set_timer(pygame.USEREVENT + 1, 1000)
 					photo_count = 1
@@ -320,25 +319,10 @@ def main():
 					result_file_name = ''
 					
 				if event.name == 'btnPrintClick':
-					print 'Print photo'
-					sub = subprocess.Popen(['lp', '-n',
-								str(SETTINGS['print_copies']), '-d',
-								'MITSUBISHI_CPD80D', result_file_name],
-								stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-								shell=False)
-					err = sub.stderr.read()
-					print err
+					printphoto.print_photo(result_file_name, int(SETTINGS['print_copies']))
 					
 				if event.name == 'btnPrintAllClick':
-					path = 'results'
-					files = glob.glob(path + '/*.jpg')
-					for f in files:
-						sub = subprocess.Popen(['lp', '-n', str(1),
-								'-d', 'MITSUBISHI_CPD80D', f],
-								stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-								shell=False)
-						err = sub.stderr.read()
-						print err
+					printphoto.print_all()
 				
 				if event.name == 'btnOptionsClick':
 					if current_screen_is('OptionsScreen'):
