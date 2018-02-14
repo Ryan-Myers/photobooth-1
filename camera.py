@@ -11,4 +11,4 @@
 import subprocess
 
 def trigger_capture(capturenumber):
-	summary = subprocess.Popen(['fswebcam -r 640x480 --device /dev/video0 --input 0 --no-banner -q tmp/capture' + str(capturenumber) +'.jpg'], shell=True)
+	summary = subprocess.Popen(['raspistill -vf -hf --timeout 1 -o tmp/capture' + str(capturenumber) +'.jpg'], shell=True)
