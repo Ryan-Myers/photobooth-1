@@ -86,7 +86,7 @@ global_crop=false
 preview=false
 border=false
 round=false
-cups_printer_name="Canon_SELPHY_CP1200"
+cups_printer_name="Canon_SELPHY_CP1300"
 
 POSITIONAL=()
 while [[ $# -gt 0 ]]

@@ -9,51 +9,51 @@
                 "position": [170, 145], 
                 "angle": 270, 
                 "type": "image", 
-                "file": "capture1.jpg", 
+                "file": "capture3.jpg", 
                 "size": [750, 500]
             }, 
             {
                 "position": [170, 905], 
                 "angle": 270, 
                 "type": "image", 
-                "file": "capture2.jpg", 
+                "file": "capture4.jpg", 
                 "size": [750, 500]
             }, 
             {
                 "position": [680, 145], 
                 "angle": 270, 
                 "type": "image", 
-                "file": "capture3.jpg", 
+                "file": "capture1.jpg", 
                 "size": [750, 500]
             }, 
             {
                 "position": [680, 905], 
                 "angle": 270, 
                 "type": "image", 
-                "file": "capture4.jpg", 
+                "file": "capture2.jpg", 
                 "size": [750, 500]
             }, 
             {
                 "font_size": 50, 
                 "angle": 270, 
-                "text": "Sarah and Ryan's Wedding!", 
+                "text": "2018-06-23", 
                 "text_color": [0, 0, 0], 
                 "position": [25, 580],
-                "font": "fonts/arial.ttf", 
+                "font": "fonts/Kavivanar-Regular.ttf", 
                 "type": "label",
-				"vertical_center" : true,
-				"horizontal_center" : false
+                "vertical_center" : true,
+                "horizontal_center" : false
             }, 
             {
                 "font_size": 70, 
                 "angle": 270, 
-                "text": "custom text",
+                "text": "Sarah and Ryan's Wedding!",
                 "text_color": [0, 0, 0], 
-                "position": [95, 580],
-                "font": "fonts/ANTQUAB.TTF", 
+                "position": [85, 580],
+                "font": "fonts/Sacramento-Regular.ttf", 
                 "type": "label",
-				"vertical_center" : true,
-				"horizontal_center" : false
+                "vertical_center" : true,
+                "horizontal_center" : false
             }
         ]
     }
