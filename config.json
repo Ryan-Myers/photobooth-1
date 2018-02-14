@@ -230,7 +230,7 @@
     "position":[275, 375],
     "event":"btnPrintClick"
   }],
-  "background": [139, 174, 233]
+  "background": [0, 0, 0]
 }, {
   "name":"WorkInProgress",
   "labels": [{

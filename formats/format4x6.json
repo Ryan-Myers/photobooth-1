@@ -49,7 +49,7 @@
                 "angle": 270, 
                 "text": "Sarah and Ryan's Wedding!",
                 "text_color": [0, 0, 0], 
-                "position": [85, 580],
+                "position": [80, 580],
                 "font": "fonts/Sacramento-Regular.ttf", 
                 "type": "label",
                 "vertical_center" : true,
