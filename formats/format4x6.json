@@ -1,9 +1,9 @@
 [
     {
-		"name": "4x6 simple",
+        "name": "4x6 simple",
         "dpi": 300, 
         "format": [4, 6],
-        "background_color": [255, 255, 255],
+        "background_color": [4, 139, 194],
         "components": [
             {
                 "position": [170, 145], 
@@ -48,8 +48,8 @@
                 "font_size": 70, 
                 "angle": 270, 
                 "text": "Sarah and Ryan's Wedding!",
-                "text_color": [0, 0, 0], 
-                "position": [80, 580],
+                "text_color": [255, 142, 182], 
+                "position": [77, 580],
                 "font": "fonts/Sacramento-Regular.ttf", 
                 "type": "label",
                 "vertical_center" : true,
