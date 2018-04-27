@@ -233,7 +233,7 @@ $preview || lpq -P "${cups_printer_name}" >/dev/null 2>&1 || {
 
 $preview \
     && print_or_preview="display" \
-    || print_or_preview="lpr -o raw -P ${cups_printer_name}"
+    || print_or_preview="lpr -P ${cups_printer_name}"
 
 
 ### Check image
@@ -338,6 +338,14 @@ while [ "$#" -gt 0 ]
             continue
         fi
     else
+        echo " convert ${rotateopt} ${rot} -define filter:blur=0.8 \
+            -filter Gaussian -resize "${this_imggeom}" \
+            -gravity $gravity -extent "$img_extent" "$image" png:- \
+          | ( $round && composite "${bordermaskfile}" png:- png:- || cat ) \
+          | convert -page "$page_shift" -background white -flatten \
+              -extent "$final_extent" png:- -quality $final_quality jpg:- \
+          | $print_or_preview"
+    
         convert ${rotateopt} ${rot} -define filter:blur=0.8 \
             -filter Gaussian -resize "${this_imggeom}" \
             -gravity $gravity -extent "$img_extent" "$image" png:- \
