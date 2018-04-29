@@ -251,7 +251,6 @@ class Button:
 		(event.type == pygame.JOYBUTTONUP and event.button == 1 and self.state == Button.BTN_STATE_PUSHED):
 			if (event.type == pygame.MOUSEBUTTONUP and self.image.get_rect(center=self.center).collidepoint(event.pos)) or\
 			event.type == pygame.JOYBUTTONUP:
-				print ("Button up: {}".format(event.type))
 				pygame.event.post(pygame.event.Event(Button.EVENT_BUTTONCLICK,
 									{'name':self.event}))
 			size = self.image.get_size()

@@ -4,7 +4,7 @@
     "preview_screen": true, 
     "preview_screen_delay": 0, 
     "custom_text": "Sarah and Ryan's Wedding!", 
-    "show_mouse": true, 
+    "show_mouse": false, 
     "delay_screens": "Screen5", 
     "print_copies": 1, 
     "print_format": "4x6 simple"
