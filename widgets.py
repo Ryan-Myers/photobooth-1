@@ -240,7 +240,7 @@ class Button:
 		if (event.type == pygame.MOUSEBUTTONDOWN and\
 		event.button == 1 and\
 		self.image.get_rect(center=self.center).collidepoint(event.pos)) or\
-    (event.type == pygame.JOYBUTTONDOWN and event.button == 1):
+		(event.type == pygame.JOYBUTTONDOWN and event.button == 1):
 			size = self.image.get_size()
 			new_size = self.image_pushed.get_size()
 			self.position = (self.position[0] + (size[0] - new_size[0]) / 2,
@@ -248,7 +248,7 @@ class Button:
 			self.state = Button.BTN_STATE_PUSHED
 		elif (event.type == pygame.MOUSEBUTTONUP and\
 		event.button == 1 and self.state == Button.BTN_STATE_PUSHED) or\
-    (event.type == pygame.JOYBUTTONUP and event.button == 1 and self.state == Button.BTN_STATE_PUSHED):
+		(event.type == pygame.JOYBUTTONUP and event.button == 1 and self.state == Button.BTN_STATE_PUSHED):
 			if (event.type == pygame.MOUSEBUTTONUP and self.image.get_rect(center=self.center).collidepoint(event.pos)) or\
       event.type == pygame.JOYBUTTONUP:
 				pygame.event.post(pygame.event.Event(Button.EVENT_BUTTONCLICK,
