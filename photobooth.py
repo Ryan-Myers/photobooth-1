@@ -25,7 +25,8 @@ from shutil import copy
 import re
 
 WIN32 = (os.name != 'posix')
-TMP_FOLDER = './tmp/'
+SCRIPT_PATH = os.path.dirname(sys.argv[0]) #Get's the path from the run command
+TMP_FOLDER = 'tmp'
   
 SETTINGS = {}
 SCENES = []
@@ -44,9 +45,9 @@ COLLAGE = None
 py_image = None
 
 def getFilePath(filename):
-  in_tmp_folder = os.path.join(TMP_FOLDER, filename)
-  in_img_folder = os.path.join('img', filename)
-  in_formats_folder = os.path.join('formats', filename)
+  in_tmp_folder = os.path.join(SCRIPT_PATH, TMP_FOLDER, filename)
+  in_img_folder = os.path.join(SCRIPT_PATH, 'img', filename)
+  in_formats_folder = os.path.join(SCRIPT_PATH, 'formats', filename)
   if os.path.exists(in_img_folder):
     return in_img_folder
   if os.path.exists(in_tmp_folder):
@@ -107,7 +108,7 @@ def create_photo(photo_config):
       
     if item_type == 'label':
       text_line = item['text']
-      font = ImageFont.truetype(item['font'], item['font_size'] * scale)
+      font = ImageFont.truetype(os.path.join(SCRIPT_PATH, item['font']), item['font_size'] * scale)
       d = ImageDraw.Draw(image)
       size = d.textsize(text_line, font)
       
@@ -137,7 +138,8 @@ def create_photo(photo_config):
       del dt
   
   today = datetime.datetime.today()
-  path = 'results'
+  path = os.path.join(SCRIPT_PATH, 'results')
+  
   if not os.path.exists(path):
     os.mkdir(path)
   filename = os.path.join(path, 'result_%s_%s.jpg' %
@@ -155,18 +157,18 @@ def create_photo(photo_config):
     return None
       
 def capture_photo(number):
-  camera.trigger_capture(number)    
+  camera.trigger_capture(SCRIPT_PATH, number)    
         
 def main():
   global WIN32, TMP_FOLDER, SETTINGS, SCENES, PHOTO_FORMAT, screens,\
     current_screen, result_file_name, TAKE_PHOTO, photo_count,\
     thread_take_photo, delayScreen, done, COLLAGE, py_image
   
-  with open('config.json', 'r') as f:
+  with open(os.path.join(SCRIPT_PATH, 'config.json'), 'r') as f:
     SCENES = json.loads(f.read())
-  with open('settings.json', 'r') as f:
+  with open(os.path.join(SCRIPT_PATH, 'settings.json'), 'r') as f:
     SETTINGS = json.loads(f.read())
-  for fileName in os.listdir('formats'):
+  for fileName in os.listdir(os.path.join(SCRIPT_PATH, 'formats')):
     with open(getFilePath(fileName), 'r') as f:
       frmt = json.loads(f.read())
       if isinstance(frmt, list):
@@ -194,8 +196,19 @@ def main():
   
   font_cache = widgets.FontCache()
   image_cache = widgets.ImageCache()
-  for item in SCENES:
-    screens.append(widgets.Screen(item, font_cache, image_cache))
+  for scene_item in SCENES:
+    #Replace all relative paths with relative paths to the current execution path
+    for scene_item_key, scene_item_value in scene_item.iteritems() :
+      if isinstance(scene_item_value, list):
+        for i in range(0, len(scene_item_value)):
+          if type(scene_item_value[i]) is dict:
+            if u'font' in scene_item_value[i]:
+              scene_item[scene_item_key][i]['font'] = os.path.join(SCRIPT_PATH, scene_item_value[i]['font'])
+            if u'image' in scene_item_value[i]:
+              scene_item[scene_item_key][i]['image'] = os.path.join(SCRIPT_PATH, scene_item_value[i]['image'])
+            if u'file' in scene_item_value[i]:
+              scene_item[scene_item_key][i]['file'] = os.path.join(SCRIPT_PATH, scene_item_value[i]['file'])
+    screens.append(widgets.Screen(scene_item, font_cache, image_cache))
   
   window_prop = pygame.HWSURFACE
   if not WIN32:
@@ -220,11 +233,12 @@ def main():
       screens[current_screen].onevent(event)
       
       if event.type == pygame.KEYUP:
-        if event.key == pygame.K_ESCAPE:
+        if event.key == pygame.K_ESCAP+E:
           done = True
       if event.type == pygame.JOYBUTTONDOWN or event.type == pygame.JOYBUTTONUP:
         if event.button == 0: #X button pressed
           done = True
+          continue
       if event.type == pygame.QUIT:
         done = True
       if (event.type == pygame.MOUSEBUTTONUP or event.type == pygame.JOYBUTTONUP) and current_screen_is('PreviewScreen')\
@@ -305,7 +319,7 @@ def main():
           result_file_name = ''
           
         if event.name == 'btnPrintClick':
-          printphoto.print_photo(result_file_name, int(SETTINGS['print_copies']))
+          printphoto.print_photo(SCRIPT_PATH, result_file_name, int(SETTINGS['print_copies']))
           
         if event.name == 'btnPrintAllClick':
           printphoto.print_all()
