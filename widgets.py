@@ -163,7 +163,6 @@ class TextEdit:
 							position[1] + 2), hcenter, vcenter, size)
 		
 	def setText(self, text):
-		print text
 		self.label.setText(text)
 		self.text = text
 		
@@ -181,7 +180,6 @@ class TextEdit:
 			if self.rect.collidepoint(event.pos):
 				if self.keyboard:
 					self.keyboard.enable()
-				print 'Text edit click'
 			elif self.keyboard and self.keyboard.state > 0\
 				and (not self.keyboardRect.collidepoint(event.pos)):
 					self.keyboard.disable()
