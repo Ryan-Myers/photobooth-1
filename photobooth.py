@@ -21,7 +21,6 @@ import datetime
 import camera
 import printphoto
 import subprocess
-from pygame_vkeyboard import *
 from shutil import copy
 import re
 
@@ -156,25 +155,7 @@ def create_photo(photo_config):
     return None
       
 def capture_photo(number):
-  camera.trigger_capture(number)
-
-def checkPassword(password):
-  global passKeyb
-  if password.find('1532') > -1:
-    passKeyb.disable()
-    passKeyb.buffer = ''
-    set_current_screen('OptionsScreen')
-    updown = screens[current_screen].getControlByName("txtUpDown")
-    updown.setText(str(SETTINGS['print_copies']))
-    caption = screens[current_screen].getControlByName("txtCaption")
-    caption.setText(SETTINGS['custom_text'])
-    lblCollages = screens[current_screen].getControlByName("lblCollages")
-    lblSaved = screens[current_screen].getControlByName("lblSaved")
-    path = 'results'
-    numfiles = len(glob.glob(path + '/*.jpg'))
-    lblCollages.setText('Collages created: %d' % numfiles)
-    lblSaved.setText('Saved: 0\\%d' % numfiles)
-    
+  camera.trigger_capture(number)    
         
 def main():
   global WIN32, TMP_FOLDER, SETTINGS, SCENES, PHOTO_FORMAT, screens,\
@@ -223,11 +204,6 @@ def main():
   window = pygame.display.set_mode((800, 480), window_prop, 32)
   clock = pygame.time.Clock()
   
-  global passKeyb
-  passKeyb = VKeyboard(window, checkPassword,
-            VKeyboardLayout(VKeyboardLayout.AZERTY),
-            renderer=widgets.MyKeyboardRenderer.DEFAULT)
-  
   delayScreen = SETTINGS['delay_screens']
   set_current_screen('MainScreen')
   while done == False:
@@ -241,13 +217,8 @@ def main():
     #button_start = snes_pad.get_button(9)  
     
     for event in pygame.event.get():
-      if passKeyb.state == 0:
-        screens[current_screen].onevent(event)
-      elif event.type == pygame.MOUSEBUTTONDOWN:
-        if event.pos[1] < 240:
-          passKeyb.disable()
-        continue;
-         
+      screens[current_screen].onevent(event)
+      
       if event.type == pygame.KEYUP:
         if event.key == pygame.K_ESCAPE:
           done = True
@@ -352,8 +323,6 @@ def main():
             with open('settings.json', 'w') as f:
               f.write(json.dumps(SETTINGS, indent=4))
             set_current_screen('MainScreen')
-          else:
-            passKeyb.enable()
         
         if event.name == 'btnUpClick':
           ctrl = screens[current_screen].getControlByName("txtUpDown")
@@ -417,9 +386,6 @@ def main():
       if textedit.keyboard.state > 0:
         textedit.keyboard.invalidate()
         textedit.keyboard.on_event(event)
-    if passKeyb.state > 0:
-      passKeyb.invalidate()
-      passKeyb.on_event(event)
       
     pygame.display.flip()
     clock.tick(60)

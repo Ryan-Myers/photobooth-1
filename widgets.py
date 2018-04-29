@@ -9,7 +9,6 @@
 # Licence:     MIT
 #-------------------------------------------------------------------------------
 import pygame
-from pygame_vkeyboard import *
 from os.path import join, dirname
 
 class Screen:
@@ -142,20 +141,6 @@ class Label:
 			self.fontCache.addFont(self.font, self.font_size, font)
 		self.fontImg = font.render(self.text, True, tuple(self.color))
 
-class MyKeyboardRenderer(VKeyboardRenderer):
-	pass
-##	def draw_background(self, surface, position, size):
-##		pygame.draw.rect(surface, (255, 255, 255, 255),
-##			(position[0] + 25, position[1]) + (size[0] - 50, size[1]))
-
-MyKeyboardRenderer.DEFAULT = MyKeyboardRenderer(
-	pygame.font.Font('fonts/DejaVuSans.ttf', 25),
-	(255, 255, 255),
-	((255, 255, 255), (0, 0, 0)),
-	((0, 0, 0), (255, 255, 255)),
-	((180, 180, 180), (0, 0, 0)),
-)
-
 class TextEdit:
 	def __init__(self, position, size, font = "fonts/arial.ttf",
 							font_size = 20, color = (0, 0, 0),
@@ -188,15 +173,6 @@ class TextEdit:
 	def render(self, screen):
 		screen.fill((255, 255, 255), self.rect)
 		pygame.draw.rect(screen, (0, 0, 0), self.rect, 1)
-		if self.keyboard == None:
-			self.keyboard = VKeyboard(screen, self.setText,
-									VKeyboardLayout(VKeyboardLayout.AZERTY))
-##			new_size = (800, 455)
-##			self.keyboard.original_layout.configure_bound(new_size)
-##			self.keyboard.special_char_layout.configure_bound(new_size)
-			self.keyboard.buffer = self.text
-			self.keyboardRect = pygame.Rect(self.keyboard.layout.position,
-								self.keyboard.layout.size)
 		if self.label:
 			self.label.render(screen)
 			
