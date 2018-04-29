@@ -251,12 +251,12 @@ def main():
       if event.type == pygame.KEYUP:
         if event.key == pygame.K_ESCAPE:
           done = True
-      if event.type == pygame.JOYBUTTONDOWN:
+      if event.type == pygame.JOYBUTTONDOWN or event.type == pygame.JOYBUTTONUP:
         if event.button == 0: #X button pressed
           done = True
       if event.type == pygame.QUIT:
         done = True
-      if event.type == pygame.MOUSEBUTTONUP and current_screen_is('PreviewScreen')\
+      if (event.type == pygame.MOUSEBUTTONUP or event.type == pygame.JOYBUTTONUP) and current_screen_is('PreviewScreen')\
         and SETTINGS['preview_screen_delay'] == 0:
         set_current_screen('EndScreen')
         pygame.time.set_timer(pygame.USEREVENT + 1, 5000)

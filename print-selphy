@@ -337,15 +337,7 @@ while [ "$#" -gt 0 ]
             shift
             continue
         fi
-    else
-        echo " convert ${rotateopt} ${rot} -define filter:blur=0.8 \
-            -filter Gaussian -resize "${this_imggeom}" \
-            -gravity $gravity -extent "$img_extent" "$image" png:- \
-          | ( $round && composite "${bordermaskfile}" png:- png:- || cat ) \
-          | convert -page "$page_shift" -background white -flatten \
-              -extent "$final_extent" png:- -quality $final_quality jpg:- \
-          | $print_or_preview"
-    
+    else    
         convert ${rotateopt} ${rot} -define filter:blur=0.8 \
             -filter Gaussian -resize "${this_imggeom}" \
             -gravity $gravity -extent "$img_extent" "$image" png:- \
