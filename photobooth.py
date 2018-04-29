@@ -195,7 +195,10 @@ def main():
       
   
   pygame.init()
+  pygame.joystick.init()
   pygame.mouse.set_visible(SETTINGS['show_mouse'])
+  snes_pad = pygame.joystick.Joystick(0)
+  snes_pad.init()
   
   selected_format = PHOTO_FORMAT[0]
 
@@ -228,6 +231,15 @@ def main():
   delayScreen = SETTINGS['delay_screens']
   set_current_screen('MainScreen')
   while done == False:
+    button_x = snes_pad.get_button(0)
+    button_a = snes_pad.get_button(1)
+    button_b = snes_pad.get_button(2)
+    button_y = snes_pad.get_button(3)
+    button_l = snes_pad.get_button(4)
+    button_r = snes_pad.get_button(5)
+    button_select = snes_pad.get_button(8)
+    button_start = snes_pad.get_button(9)  
+    
     for event in pygame.event.get():
       if passKeyb.state == 0:
         screens[current_screen].onevent(event)
@@ -238,6 +250,9 @@ def main():
          
       if event.type == pygame.KEYUP:
         if event.key == pygame.K_ESCAPE:
+          done = True
+      if event.type == pygame.JOYBUTTONDOWN:
+        if event.button == 0: #X button pressed
           done = True
       if event.type == pygame.QUIT:
         done = True

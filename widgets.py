@@ -237,17 +237,20 @@ class Button:
 			screen.blit(self.image_pushed, self.position)
 		
 	def onevent(self, event):
-		if event.type == pygame.MOUSEBUTTONDOWN and\
+		if (event.type == pygame.MOUSEBUTTONDOWN and\
 		event.button == 1 and\
-		self.image.get_rect(center=self.center).collidepoint(event.pos):
+		self.image.get_rect(center=self.center).collidepoint(event.pos)) or\
+    (event.type == pygame.JOYBUTTONDOWN and event.button == 1):
 			size = self.image.get_size()
 			new_size = self.image_pushed.get_size()
 			self.position = (self.position[0] + (size[0] - new_size[0]) / 2,
 							self.position[1] + (size[1] - new_size[1]) / 2)
 			self.state = Button.BTN_STATE_PUSHED
-		elif event.type == pygame.MOUSEBUTTONUP and\
-		event.button == 1 and self.state == Button.BTN_STATE_PUSHED:
-			if self.image.get_rect(center=self.center).collidepoint(event.pos):
+		elif (event.type == pygame.MOUSEBUTTONUP and\
+		event.button == 1 and self.state == Button.BTN_STATE_PUSHED) or\
+    (event.type == pygame.JOYBUTTONUP and event.button == 1 and self.state == Button.BTN_STATE_PUSHED):
+			if (event.type == pygame.MOUSEBUTTONUP and self.image.get_rect(center=self.center).collidepoint(event.pos)) or\
+      event.type == pygame.JOYBUTTONUP:
 				pygame.event.post(pygame.event.Event(Button.EVENT_BUTTONCLICK,
 									{'name':self.event}))
 			size = self.image.get_size()
