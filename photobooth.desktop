@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Photobooth
+Exec=python /home/pi/Photobooth/raspi-photobooth/photobooth.py

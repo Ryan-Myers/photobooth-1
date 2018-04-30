@@ -233,7 +233,7 @@ def main():
       screens[current_screen].onevent(event)
       
       if event.type == pygame.KEYUP:
-        if event.key == pygame.K_ESCAP+E:
+        if event.key == pygame.K_ESCAPE:
           done = True
       if event.type == pygame.JOYBUTTONDOWN or event.type == pygame.JOYBUTTONUP:
         if event.button == 0: #X button pressed
