@@ -1,4 +1,85 @@
 [{
+  "name":"OptionsScreen",
+  "labels": [{
+    "hvaligment": [true, false],
+    "font_size": 40,
+    "color": [0, 0, 0],
+    "text": "Settings",
+    "position": [0, 30],
+    "font": "fonts/arial.ttf"
+  }, {
+    "hvaligment": [false, false],
+    "font_size": 20,
+    "color": [0, 0, 0],
+    "text": "Number of prints",
+    "position": [271, 125],
+    "font": "fonts/arial.ttf",
+    "zindex": 99
+  }, {
+    "hvaligment": [false, false],
+    "font_size": 20,
+    "color": [0, 0, 0],
+    "text": "Collages created: 0",
+    "position": [310, 320],
+    "font": "fonts/arial.ttf",
+    "name": "lblCollages"
+  }, {
+    "hvaligment": [false, false],
+    "font_size": 20,
+    "color": [0, 0, 0],
+    "text": "Saved: 0\\10",
+    "position": [500, 390],
+    "font": "fonts/arial.ttf",
+    "name": "lblSaved"
+  }],
+  "buttons":[{
+    "image":"img/back_btn.png",
+    "position":[30, 380],
+    "event":"btnOptionsClick"
+  }, {
+    "image":"img/print_all_btn.png",
+    "position":[120, 365],
+    "event":"btnPrintAllClick"
+  }, {
+    "image":"img/save_btn.png",
+    "position":[300, 365],
+    "event":"btnSaveClick"
+  }, {
+    "image":"img/up_arrow.png",
+    "position":[430, 105],
+    "event":"btnUpClick"
+  }, {
+    "image":"img/down_arrow.png",
+    "position":[430, 145],
+    "event":"btnDownClick"
+  }],
+  "pictures":[{
+    "file":"img/spiner_bg.png",
+    "position":[269, 100]
+  }],
+  "textedits":[{
+    "position":[100, 200],
+    "size":[600, 30],
+    "hvaligment": [true, true],
+    "font_size": 20,
+    "color": [0, 0, 0],
+    "text": "Sarah and Ryan Wedding!",
+    "font": "fonts/arial.ttf",
+    "name": "txtCaption"
+  }, {
+    "position":[485, 112],
+    "size":[40, 50],
+    "hvaligment": [true, true],
+    "font_size": 20,
+    "color": [0, 0, 0],
+    "text": "1",
+    "font": "fonts/arial.ttf",
+    "zindex" : 98,
+    "name" : "txtUpDown"
+  }],
+  "background": [139, 174, 233]
+},
+{
   "name":"MainScreen",
   "labels": [{
     "hvaligment": [true, false],
@@ -148,85 +229,4 @@
     "font": "fonts/arial.ttf"
   }],
   "background": [0, 0, 0]
-},
-{
-  "name":"OptionsScreen",
-  "labels": [{
-    "hvaligment": [true, false],
-    "font_size": 40,
-    "color": [0, 0, 0],
-    "text": "Settings",
-    "position": [0, 30],
-    "font": "fonts/arial.ttf"
-  }, {
-    "hvaligment": [false, false],
-    "font_size": 20,
-    "color": [0, 0, 0],
-    "text": "Number of prints",
-    "position": [271, 125],
-    "font": "fonts/arial.ttf",
-    "zindex": 99
-  }, {
-    "hvaligment": [false, false],
-    "font_size": 20,
-    "color": [0, 0, 0],
-    "text": "Collages created: 0",
-    "position": [310, 320],
-    "font": "fonts/arial.ttf",
-    "name": "lblCollages"
-  }, {
-    "hvaligment": [false, false],
-    "font_size": 20,
-    "color": [0, 0, 0],
-    "text": "Saved: 0\\10",
-    "position": [500, 390],
-    "font": "fonts/arial.ttf",
-    "name": "lblSaved"
-  }],
-  "buttons":[{
-    "image":"img/back_btn.png",
-    "position":[30, 380],
-    "event":"btnOptionsClick"
-  }, {
-    "image":"img/print_all_btn.png",
-    "position":[120, 365],
-    "event":"btnPrintAllClick"
-  }, {
-    "image":"img/save_btn.png",
-    "position":[300, 365],
-    "event":"btnSaveClick"
-  }, {
-    "image":"img/up_arrow.png",
-    "position":[430, 105],
-    "event":"btnUpClick"
-  }, {
-    "image":"img/down_arrow.png",
-    "position":[430, 145],
-    "event":"btnDownClick"
-  }],
-  "pictures":[{
-    "file":"img/spiner_bg.png",
-    "position":[269, 100]
-  }],
-  "textedits":[{
-    "position":[100, 200],
-    "size":[600, 30],
-    "hvaligment": [true, true],
-    "font_size": 20,
-    "color": [0, 0, 0],
-    "text": "Sarah and Ryan Wedding!",
-    "font": "fonts/arial.ttf",
-    "name": "txtCaption"
-  }, {
-    "position":[485, 112],
-    "size":[40, 50],
-    "hvaligment": [true, true],
-    "font_size": 20,
-    "color": [0, 0, 0],
-    "text": "1",
-    "font": "fonts/arial.ttf",
-    "zindex" : 98,
-    "name" : "txtUpDown"
-  }],
-  "background": [139, 174, 233]
 }]

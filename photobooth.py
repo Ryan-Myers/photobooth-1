@@ -395,11 +395,6 @@ def main():
               pygame.display.flip()
           
     screens[current_screen].render(window)
-    for textedit in \
-      screens[current_screen].getControlsByType(widgets.TextEdit):
-      if textedit.keyboard.state > 0:
-        textedit.keyboard.invalidate()
-        textedit.keyboard.on_event(event)
       
     pygame.display.flip()
     clock.tick(60)
