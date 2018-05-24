@@ -214,7 +214,7 @@ def main():
   if not WIN32:
     window_prop |= pygame.FULLSCREEN
   
-  window = pygame.display.set_mode((800, 480), window_prop, 32)
+  window = pygame.display.set_mode((1280, 720), window_prop, 32)
   clock = pygame.time.Clock()
   
   delayScreen = SETTINGS['delay_screens']

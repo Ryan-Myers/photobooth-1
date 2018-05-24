@@ -1,4 +1,155 @@
 [{
+  "name":"MainScreen",
+  "labels": [{
+    "hvaligment": [true, false],
+    "font_size": 50,
+    "color": [255, 255, 255],
+    "text": "Ryan and Sarah's Wedding Photobooth!",
+    "position": [0, 100],
+    "font": "fonts/arial.ttf"
+  }, {
+    "hvaligment": [true, false],
+    "font_size": 50,
+    "color": [0, 0, 0],
+    "text": "Please Touch Screen to Start",
+    "position": [0, 250],
+    "font": "fonts/arial.ttf"
+  }],
+  "buttons":[{
+    "image":"img/start_btn.png",
+    "position":[515, 500],
+    "event":"btnStartClick"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"Screen6",
+  "labels": [{
+    "hvaligment": [true, true],
+    "font_size": 385,
+    "color": [255, 255, 255],
+    "text": "6",
+    "position": [100, 50],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"Screen5",
+  "labels": [{
+    "hvaligment": [true, true],
+    "font_size": 385,
+    "color": [255, 255, 255],
+    "text": "5",
+    "position": [100, 50],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"Screen4",
+  "labels": [{
+    "hvaligment": [true, true],
+    "font_size": 385,
+    "color": [255, 255, 255],
+    "text": "4",
+    "position": [100, 50],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"Screen3",
+  "labels": [{
+    "hvaligment": [true, true],
+    "font_size": 385,
+    "color": [255, 255, 255],
+    "text": "3",
+    "position": [100, 50],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"Screen2",
+  "labels": [{
+    "hvaligment": [true, true],
+    "font_size": 385,
+    "color": [255, 255, 255],
+    "text": "2",
+    "position": [100, 50],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"Screen1",
+  "labels": [{
+    "hvaligment": [true, true],
+    "font_size": 385,
+    "color": [255, 255, 255],
+    "text": "1",
+    "position": [100, 50],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"StrikeAPoseScreen",
+  "labels": [{
+    "hvaligment": [true, true],
+    "font_size": 100,
+    "color": [255, 255, 255],
+    "text": "Strike a pose!",
+    "position": [100, 50],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"PreviewScreen",
+  "pictures":[{
+    "comment":"Is a preview picture position and size",
+    "name":"preview",
+    "position":[175, 0],
+    "size":[600, 900]
+  }],
+  "buttons":[{
+    "image":"img/print_btn.png",
+    "position":[515, 610],
+    "event":"btnPrintClick"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"WorkInProgress",
+  "labels": [{
+    "hvaligment": [true, true],
+    "font_size": 50,
+    "color": [255, 0, 0],
+    "text": "Creating collage... Please wait.",
+    "position": [100, 50],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+}, {
+  "name":"EndScreen",
+  "labels": [{
+    "hvaligment": [true, false],
+    "font_size": 70,
+    "color": [255, 255, 255],
+    "text": "Thank You",
+    "position": [0, 20],
+    "font": "fonts/arial.ttf"
+  }, {
+    "hvaligment": [true, false],
+    "font_size": 65,
+    "color": [255, 255, 255],
+    "text": "Please Take Photo Below",
+    "position": [0, 175],
+    "font": "fonts/arial.ttf"
+  }, {
+    "hvaligment": [true, false],
+    "font_size": 55,
+    "color": [255, 255, 255],
+    "text": "Now get back to partying!",
+    "position": [100, 380],
+    "font": "fonts/arial.ttf"
+  }],
+  "background": [0, 0, 0]
+},
+{
   "name":"OptionsScreen",
   "labels": [{
     "hvaligment": [true, false],
@@ -54,9 +205,6 @@
     "event":"btnDownClick"
   }],
   "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }, {
     "file":"img/spiner_bg.png",
     "position":[269, 100]
   }],
@@ -81,198 +229,4 @@
     "name" : "txtUpDown"
   }],
   "background": [139, 174, 233]
-}, {
-  "name":"MainScreen",
-  "labels": [{
-    "hvaligment": [true, false],
-    "font_size": 50,
-    "color": [255, 255, 255],
-    "text": "Ryan and Sarah's Wedding",
-    "position": [0, 100],
-    "font": "fonts/arial.ttf"
-  }, {
-    "hvaligment": [true, false],
-    "font_size": 50,
-    "color": [0, 0, 0],
-    "text": "Please Touch Screen to Start",
-    "position": [0, 250],
-    "font": "fonts/arial.ttf"
-  }],
-  "buttons":[{
-    "image":"img/start_btn.png",
-    "position":[275, 350],
-    "event":"btnStartClick"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"Screen6",
-  "labels": [{
-    "hvaligment": [true, true],
-    "font_size": 385,
-    "color": [255, 255, 255],
-    "text": "6",
-    "position": [100, 50],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"Screen5",
-  "labels": [{
-    "hvaligment": [true, true],
-    "font_size": 385,
-    "color": [255, 255, 255],
-    "text": "5",
-    "position": [100, 50],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"Screen4",
-  "labels": [{
-    "hvaligment": [true, true],
-    "font_size": 385,
-    "color": [255, 255, 255],
-    "text": "4",
-    "position": [100, 50],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"Screen3",
-  "labels": [{
-    "hvaligment": [true, true],
-    "font_size": 385,
-    "color": [255, 255, 255],
-    "text": "3",
-    "position": [100, 50],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"Screen2",
-  "labels": [{
-    "hvaligment": [true, true],
-    "font_size": 385,
-    "color": [255, 255, 255],
-    "text": "2",
-    "position": [100, 50],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"Screen1",
-  "labels": [{
-    "hvaligment": [true, true],
-    "font_size": 385,
-    "color": [255, 255, 255],
-    "text": "1",
-    "position": [100, 50],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"StrikeAPoseScreen",
-  "labels": [{
-    "hvaligment": [true, true],
-    "font_size": 100,
-    "color": [255, 255, 255],
-    "text": "Strike a pose!",
-    "position": [100, 50],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"PreviewScreen",
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  },
-  {
-    "comment":"Is a preview picture position and size",
-    "name":"preview",
-    "position":[175, 50],
-    "size":[300, 450]
-  }],
-  "buttons":[{
-    "image":"img/print_btn.png",
-    "position":[275, 375],
-    "event":"btnPrintClick"
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"WorkInProgress",
-  "labels": [{
-    "hvaligment": [true, true],
-    "font_size": 50,
-    "color": [255, 0, 0],
-    "text": "Creating collage... Please wait.",
-    "position": [100, 50],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
-}, {
-  "name":"EndScreen",
-  "labels": [{
-    "hvaligment": [true, false],
-    "font_size": 70,
-    "color": [255, 255, 255],
-    "text": "Thank You",
-    "position": [0, 20],
-    "font": "fonts/arial.ttf"
-  }, {
-    "hvaligment": [true, false],
-    "font_size": 65,
-    "color": [255, 255, 255],
-    "text": "Please Take Photo Below",
-    "position": [0, 175],
-    "font": "fonts/arial.ttf"
-  }, {
-    "hvaligment": [true, false],
-    "font_size": 55,
-    "color": [255, 255, 255],
-    "text": "Now get back to partying!",
-    "position": [100, 380],
-    "font": "fonts/arial.ttf"
-  }],
-  "pictures":[{
-    "file":"img/frame.png",
-    "position":[0, 0]
-  }],
-  "background": [0, 0, 0]
 }]

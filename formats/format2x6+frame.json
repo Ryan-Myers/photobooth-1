@@ -1,6 +1,6 @@
 [
     {
-		"name": "2x6+frame",
+        "name": "2x6+frame",
         "dpi": 300, 
         "format": [4, 6],
         "background_color": [255, 255, 255],
@@ -48,10 +48,10 @@
                 "position": [25, 1700], 
                 "font": "fonts/arial.ttf", 
                 "type": "label",
-				"vertical_center" : false,
-				"horizontal_center" : false
+                "vertical_center" : false,
+               "horizontal_center" : false
             },
-			{
+            {
                 "position": [624, 24], 
                 "angle": 0, 
                 "type": "image", 
@@ -94,8 +94,8 @@
                 "position": [624, 1700], 
                 "font": "fonts/arial.ttf", 
                 "type": "label",
-				"vertical_center" : false,
-				"horizontal_center" : false
+                "vertical_center" : false,
+                "horizontal_center" : false
             }
         ]
     }

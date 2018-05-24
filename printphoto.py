@@ -11,13 +11,11 @@
 import subprocess, os
 
 def print_photo(SCRIPT_PATH, imagefile, copies_to_print):
-  print 'Print photo'
-  #./print-selphy -P Canon_SELPHY_CP1300 postcard ~/Downloads/IMG_20171111_161534.jpg
-  #summary = subprocess.Popen(['fswebcam -r 640x480 --device /dev/video0 --input 0 --no-banner -q tmp/capture' + str(capturenumber) +'.jpg'], shell=True)
   for i in range(0, copies_to_print):
     print 'Printing: ' + imagefile
-    sub = subprocess.Popen([os.path.join(SCRIPT_PATH, 'print-selphy') + ' -P Canon_SELPHY_CP1300 postcard ' + imagefile], shell=True)
-  
+    #sub = subprocess.Popen([os.path.join(SCRIPT_PATH, 'print-selphy') + ' -P Canon_SELPHY_CP1300 postcard ' + imagefile], shell=True)
+    sub = subprocess.Popen(['lpr -P Canon_SELPHY_CP1300 ' + imagefile], shell=True)
+    
 def print_all():
   path = 'results'
   files = glob.glob(path + '/*.jpg')
