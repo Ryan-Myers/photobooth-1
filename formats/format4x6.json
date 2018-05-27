@@ -6,6 +6,11 @@
         "background_color": [4, 139, 194],
         "components": [
             {
+                "angle": 270, 
+                "type": "background-image", 
+                "file": "template_hearts.png"
+            }, 
+            {
                 "position": [170, 145], 
                 "angle": 270, 
                 "type": "image", 
@@ -48,9 +53,9 @@
                 "font_size": 70, 
                 "angle": 270, 
                 "text": "Sarah and Ryan's Wedding!",
-                "text_color": [255, 142, 182], 
-                "position": [77, 580],
-                "font": "fonts/Sacramento-Regular.ttf", 
+                "text_color": [0, 0, 0], 
+                "position": [70, 580],
+                "font": "fonts/Pacifico-Regular.ttf", 
                 "type": "label",
                 "vertical_center" : true,
                 "horizontal_center" : false

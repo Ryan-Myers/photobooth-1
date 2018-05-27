@@ -105,6 +105,15 @@ def create_photo(photo_config):
       image.paste(photo, (picture['position'][0] * scale,
                 picture['position'][1] * scale), photo)
       del photo
+    
+    if item_type == 'background-image':
+      picture = item
+      photo_name = getFilePath(picture['file'])
+      photo = Image.open(photo_name)
+      photo = photo.rotate(picture['angle'], expand=True)
+      photo = photo.convert('RGBA')
+      image.paste(photo)
+      del photo
       
     if item_type == 'label':
       text_line = item['text']
@@ -133,7 +142,6 @@ def create_photo(photo_config):
           x = width / 2 - textWidth / 2
       
       image.paste(text, (x, y), text)
-      
       del d
       del dt
   
