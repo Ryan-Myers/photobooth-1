@@ -244,13 +244,13 @@ def main():
         if event.key == pygame.K_ESCAPE:
           done = True
       if event.type == pygame.JOYBUTTONDOWN or event.type == pygame.JOYBUTTONUP:
-        if event.button == 0: #X button pressed
+        if event.button == 8: #SELECT button pressed
           done = True
           continue
       if event.type == pygame.QUIT:
         done = True
       if (event.type == pygame.MOUSEBUTTONUP or event.type == pygame.JOYBUTTONUP) and current_screen_is('PreviewScreen')\
-        and SETTINGS['preview_screen_delay'] == 0:
+        and SETTINGS['preview_screen_delay'] == 0 and (event.type == pygame.MOUSEBUTTONUP or event.button == 1):
         set_current_screen('EndScreen')
         pygame.time.set_timer(pygame.USEREVENT + 1, 5000)
   
@@ -308,7 +308,7 @@ def main():
             pygame.time.set_timer(pygame.USEREVENT + 1, 100)
             set_current_screen('WorkInProgress')
   
-        if current_screen_is('EndScreen'):
+        if current_screen_is('EndScreen') or current_screen_is('EndScreenCancelled'):
           pygame.time.set_timer(pygame.USEREVENT + 1,
                       SETTINGS['end_screen_delay'])
   
@@ -328,6 +328,10 @@ def main():
           
         if event.name == 'btnPrintClick':
           printphoto.print_photo(SCRIPT_PATH, result_file_name, int(SETTINGS['print_copies']))
+        
+        if event.name == 'btnPrintCancelClick':
+          set_current_screen('EndScreenCancelled')
+          pygame.time.set_timer(pygame.USEREVENT + 1, 5000)
           
         if event.name == 'btnPrintAllClick':
           printphoto.print_all()
