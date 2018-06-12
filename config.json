@@ -184,17 +184,17 @@
   "pictures":[{
     "comment":"Is a preview picture position and size",
     "name":"preview",
-    "position":[175, 0],
-    "size":[600, 900]
+    "position":[200, 0],
+    "size":[533, 800]
   }],
   "buttons":[{
-    "image":"img/print_btn.png",
-    "position":[385, 610],
+    "image":"img/snes-controller-print.png",
+    "position":[420, 550],
     "event":"btnPrintClick"
   }],
   "cancelbuttons":[{
-    "image":"img/cancel_btn.png",
-    "position":[645, 610],
+    "image":"img/snes-controller-print.png",
+    "position":[420, 550],
     "event":"btnPrintCancelClick"
   }],
   "background": [0, 0, 0]

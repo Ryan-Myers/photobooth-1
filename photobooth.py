@@ -312,7 +312,7 @@ def main():
           pygame.time.set_timer(pygame.USEREVENT + 1,
                       SETTINGS['end_screen_delay'])
   
-        if current_screen == len(screens):
+        if current_screen == len(screens) or current_screen == len(screens) - 1:
           pygame.time.set_timer(pygame.USEREVENT + 1, 0)
           set_current_screen('MainScreen')
           
