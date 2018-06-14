@@ -97,8 +97,8 @@
     "font": "fonts/arial.ttf"
   }],
   "buttons":[{
-    "image":"img/start_btn.png",
-    "position":[515, 500],
+    "image":"img/snes-controller-start.png",
+    "position":[400, 400],
     "event":"btnStartClick"
   }],
   "background": [0, 0, 0]

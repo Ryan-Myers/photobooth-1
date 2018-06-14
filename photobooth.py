@@ -243,10 +243,10 @@ def main():
       if event.type == pygame.KEYUP:
         if event.key == pygame.K_ESCAPE:
           done = True
-      if event.type == pygame.JOYBUTTONDOWN or event.type == pygame.JOYBUTTONUP:
-        if event.button == 8: #SELECT button pressed
-          done = True
-          continue
+      #if event.type == pygame.JOYBUTTONDOWN or event.type == pygame.JOYBUTTONUP:
+      #  if event.button == 8: #SELECT button pressed
+      #    done = True
+      #   continue
       if event.type == pygame.QUIT:
         done = True
       if (event.type == pygame.MOUSEBUTTONUP or event.type == pygame.JOYBUTTONUP) and current_screen_is('PreviewScreen')\
